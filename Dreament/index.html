@@ -1,0 +1,186 @@
+   <!DOCTYPE html>
+<html>
+<head>
+    <title>Dreament.com</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="icon" type="image/jpeg" href="log.png">
+</head>
+      <body id="background">
+              <img src="log.png"class="logo" alt="Logo"
+         alt="Dreament logo"
+         style="width: 290px; position: absolute; top: 20px; left: 120px; border-radius: 100px;">
+               <p id="first">Apartment Styles </p> <p id="sec">Make Your own</p> <p id="third">Find our suggestions</p>
+            </p>
+            <button type="button" id="button1">BOOK YOUR FREE MEETING<br/>TELL US ABOUT YOUR DREAMENT</button>
+            <h1 class="letters" style="text-align: left; font-size: 13px; margin-top: 80px; margin-left:146px;">
+            <p style="font-size: big; color:rgba(208, 78, 231);">HERE... DREAMS COME TRUE</p></h1><br/>
+            <h2>MAKE YOUR DREAM APARTMENT YOUR REALLITY</h2><br/>
+            <h1>WE CAN<br/>
+                DO IT<br/>
+                FOR YOU<br/></h1></br>
+            <h3 style="text-align: left;"> Στο Dreament πιστεύουμε πως κάθε σπίτι </br> 
+              πρέπει να έχει τη δική του ταυτότητα. </br>
+              Γι’ αυτό γνωρίζουμε τον άνθρωπο πίσω από κάθε χώρο
+              και μεταφέρουμε την προσωπικότητα,</br>
+              το στυλ και τις ανάγκες του στη διακόσμησή του.</br>
+              Μαζί, κάνουμε την εικόνα που έχεις στο μυαλό σου</br>
+              πραγματικότητα, δημιουργώντας έναν χώρο που πραγματικά σε εκφράζει.</br>
+              Στείλε μας μήνυμα & κέρδισε ένα ΔΩΡΕΑΝ δοκιμαστικό session!</h3><br/></br>
+
+  <h2 id="look">ΡΙΞΤΕ ΜΙΑ ΜΑΤΙΑ</h2></br>
+  <div class="gallery">
+    <img src="dp/la.jpg">
+    <img src="dp/la1.jpg">
+    <img src="dp/la9.jpg">
+    <img src="dp/la3.jpg">
+    <img src="dp/la4.jpg">
+    <img src="dp/la5.jpg">
+    <img src="dp/la6.jpg">
+    <img src="dp/la7.jpg">
+    <img src="dp/la8.jpg">
+  </div>
+          </header>
+            <main class="letters">
+               <title>Κινούμενη Γραμμή Προσφοράς</title>
+
+               <h2 id="forma">ΦΟΡΜΑ ΕΓΓΡΑΦΗΣ</h2>
+    
+  <form id="userForm">
+    <label for="firstName">Όνομα:</label>
+    <input type="text" id="firstName" required>
+
+    <label for="lastName">Επώνυμο:</label>
+    <input type="text" id="lastName" required>
+
+    <label for="age">Ηλικία:</label>
+    <input type="number" id="age" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="gender">Φύλο:</label>
+    <select id="gender" required>
+      <option value="">-- Επιλέξτε --</option>
+      <option value="Άνδρας">Άνδρας</option>
+      <option value="Γυναίκα">Γυναίκα</option>
+      <option value="Άλλο">Άλλο</option>
+    </select>
+
+    <label>
+      <input type="checkbox" id="terms"> Αποδοχή όρων χρήσης
+    </label>
+
+    <button type="submit">Υποβολή</button>
+  </form>
+
+  <div id="message"></div>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      padding: 8px;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    .success {
+      color: green;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    const form = document.getElementById("userForm");
+    const messageDiv = document.getElementById("message");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const age = parseInt(document.getElementById("age").value.trim());
+      const email = document.getElementById("email").value.trim();
+      const gender = document.getElementById("gender").value;
+      const terms = document.getElementById("terms").checked;
+
+      let errors = [];
+
+      if (!firstName) errors.push("Το όνομα είναι υποχρεωτικό.");
+      if (!lastName) errors.push("Το επώνυμο είναι υποχρεωτικό.");
+      if (!age || isNaN(age) || age <= 0) errors.push("Η ηλικία πρέπει να είναι αριθμός μεγαλύτερος του 12.");
+      if (!email) errors.push("Το email δεν είναι έγκυρο.");
+      if (!gender) errors.push("Παρακαλώ επιλέξτε φύλο.");
+      if (!terms) errors.push("Πρέπει να αποδεχτείτε τους όρους χρήσης.");
+
+      if (errors.length > 0) {
+        messageDiv.innerHTML = "<div class='error'>" + errors.join("<br>") + "</div>";
+        return;
+      }
+
+      const userData = {
+        firstName,
+        lastName,
+        age,
+        email,
+        gender
+      };
+
+      localStorage.setItem("userData", JSON.stringify(userData));
+      messageDiv.innerHTML = `<div class='success'>Επιτυχής υποβολή! Καλωσήρθες, ${firstName} ${lastName}.</div>`;
+      form.reset();
+    });
+  </script>
+  </br></br>
+                  <div class="marquee">
+                   <span>Στείλε μας μήνυμα & κέρδισε ένα ΔΩΡΕΑΝ επίσκεψη στον χώρο σου!</span>
+                   </div><br/>
+                   
+             
+             <p id="logoi">Γιατί να μας επιλέξεις;</p><br/>
+              <p>Κάθε πρόταση σχεδιάζεται με βάση τις ανάγκες, την αισθητική και τις απαιτήσεις του δικού σας χώρου.</p>
+              <p>Συνδυάζουμε σύγχρονες τάσεις και διαχρονικές επιλογές, δημιουργώντας χώρους με ξεχωριστή αισθητική και χαρακτήρα.</p>
+              <p>Δίνουμε έμφαση στη σωστή αξιοποίηση του χώρου, την πρακτικότητα και την ποιότητα κάθε σχεδιαστικής επιλογής.</p>
+              <p>Από τη συνολική σύνθεση μέχρι την τελευταία λεπτομέρεια, κάθε στοιχείο επιλέγεται με συνέπεια ώστε το τελικό αποτέλεσμα να είναι ολοκληρωμένο και αρμονικό.</p><br/>
+              <p>Here’s a video to get an idea of what we’re offering.</p><br/>
+              <a href="https://gr.pinterest.com/pin/1407443631259038/" style="color:rgba(208, 78, 231)"> PRESS HERE TO WATCH THE VIDEO</a>
+             </main>
+                <footer style="color: rgb(208, 78, 231);">
+                   </br>
+                   <h3>Visit us at <a href="https://gr.pinterest.com/erica16213/%CE%BF%CE%BD%CE%B5%CE%B9%CF%81%CE%B5%CE%BC%CE%AD%CE%BD%CE%B1-%CF%83%CF%80%CE%AF%CF%84%CE%B9%CE%B1/" style="color:rgba(208, 78, 231)">pinterest</a> or contact us at 2101234567 for more details.</h3>
+                </footer>
+         </body>
+</html>

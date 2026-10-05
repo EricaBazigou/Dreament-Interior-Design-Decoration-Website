@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+    #background {
+    background:url("dp/ee.jpg") no-repeat fixed center;
+    background-size: 100% 100%;
+
+    z-index: 1;
+}
+.letters {
+    color: rgb(208, 78, 231);
+    z-index: 2;
+    margin-bottom: 100px;
+    font-size: large;
+   
+}
+
+h2 {
+  font-size: 300%;
+  text-align: left;
+  color:rgb(208, 78, 231);
+}
+
+#look {
+    color:rgb(254, 254, 254);
+    text-align: center;
+    font-size: 40px;
+}
+h1 {
+    color: rgb(248, 248, 248);
+    text-align: left;
+    font-size: 60px;
+}
+
+body {
+    font-weight:900;
+    text-align: center;
+    color: rgb(249, 249, 249);   
+    height: 1000px;
+}
+
+#logoi {
+    color: rgb(208, 78, 231);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  font-size: 30px;
+}
+table {
+    float: center;
+    width: 91%;
+    border-collapse: collapse; /* Makes sure borders between cells are merged */
+    margin: 10px auto; /* Centers the table on the page */
+}
+
+td {
+    border: 1px solid #000; /* Adds borders around cells */
+    padding: 10px;
+    text-align: center; /* Centers the text in each cell */
+}
+
+tr:nth-child(odd) {
+    background-color: #e7121200; /* Adds a light background color to odd rows */
+}
+
+tr:nth-child(even) {
+    background-color: #000000; /* Adds a white background to even rows */
+}
+h1, h2, h3 {
+    margin-left: 100px;
+}
+.prog {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 100;
+    margin-top: 70px;
+    color:rgb(255, 255, 255);
+}
+
+iframe {
+    float: right; /* Το iframe θα τοποθετηθεί δεξιά */
+    margin-right: 200px;
+}
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgba(208, 78, 231);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite;
+}
+
+/* Κίνηση της γραμμής */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Σταματάει την κίνηση όταν το ποντίκι είναι πάνω */
+.marquee:hover span {
+    animation-play-state: paused;
+}
+#button1 {
+    margin-left: 1100px;
+    background-color:rgb(213, 78, 231);
+    border-radius: 50%;
+    color: rgba(254, 254, 254, 0.668);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+#first {
+margin-right: 50px;
+display: inline;
+color:rgb(255, 255, 255);
+}
+#sec {
+    margin-right: 50px;
+    display: inline;
+    color:rgb(255, 255, 255);
+}
+#third {
+    margin-right: 50px;
+    display: inline;
+    color:rgb(249, 249, 249);
+}
+
+.table-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px ;
+    border-collapse: collapse;
+  }
+  
+  #myTable th, #myTable td {
+    padding: 10px;
+    text-align: center;
+  }
+   .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+    }
+
+   .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 0 2cm; /* Απόσταση 2 εκατοστά από τα πλάγια */
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.16); /* Πιο έντονο zoom */
+      box-shadow: 0 4px 12px rgba(208, 78, 231);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1cm; /* Λιγότερο περιθώριο σε μικρές οθόνες */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        padding: 0 1cm;
+      }
+    }
+    #forma {
+      text-align: center;
+      margin-right: 100px;
+      margin-top:50px;
+      }
+    
